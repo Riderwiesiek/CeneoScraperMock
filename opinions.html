@@ -69,68 +69,28 @@
         <div class="row">
             <div class="col">
                 <table class="table table-striped mb-5" id="opinions">
-                    <script>
-                      $(document).ready( function () {
-                          $('#opinions').DataTable({
-                            ajax: {url:"39562616.json",dataSrc:""},
-                            columns:[
-                              {data: 'opinions_id',title: "ID opinii"},
-                              {data: 'author',title: "Autor"},
-                              {data: 'content',title: "Treść"},
-                              {data: 'stars',title: "Gwiazdki"},
-                              {data: 'recomendation',title: "Rekomendacja"},
-                              {data: 'pros',title: "Lista zalet"},
-                              {data: 'cons',title: "Lista waf"},
-                              {data: 'useful_count',title: "Przydatna"},
-                              {data: 'unuseful_count',title: "nieprzydatna"},
-                              {data: 'purchased',title: "Potwierdzona zakupem"},
-                              {data: 'opinion_date',title: "Data wystawienia"},
-                              {data: 'purchase_date',title: "Data zakupu"},
-                            ]
-                          });
-                      });
-                    </script>
-                    <tbody>
-                        <script>
-                            $.getJSON("39562616.json", function (data) {
-                                var opinion = '';
-                                // ITERATING THROUGH OBJECTS
-                                $.each(data, function (key, value) {
-                                    //CONSTRUCTION OF ROWS HAVING
-                                    // DATA FROM JSON OBJECT
-                                    opinion += '<tr>';
-                                    opinion += '<td>' + 
-                                        value.opinion_id + '</td>';
-                                    opinion += '<td>' + 
-                                        value.author + '</td>';
-                                    opinion += '<td>' + 
-                                        value.recommendation + '</td>';
-                                    opinion += '<td>' + 
-                                        value.stars + '</td>';
-                                    opinion += '<td>' + 
-                                        value.content.substring(0,20) + '</td>';
-                                    opinion += '<td>' + 
-                                        value.pros + '</td>';
-                                    opinion += '<td>' + 
-                                        value.cons + '</td>';
-                                    opinion += '<td>' +
-                                        (value.purchased ? 'TAK' : 'NIE') + '</td>';
-                                    opinion += '<td>' + 
-                                        value.opinion_date + '</td>';
-                                    opinion += '<td>' + 
-                                        (value.purchase_date ? value.purchase_date : "") + '</td>';
-                                    opinion += '<td>' + 
-                                        value.useful_count + '</td>';
-                                    opinion += '<td>' + 
-                                        value.unuseful_count + '</td>';
-                                    opinion += '</tr>';
-                                });
-                                //INSERTING ROWS INTO TABLE 
-                                $('#opinions').append(opinion);
-                            });
-                        </script>
-                    </tbody>
                 </table>
+                <script>
+                  $(document).ready( function () {
+                      $('#opinions').DataTable({
+                        ajax: {url:"39562616.json",dataSrc:""},
+                        columns:[
+                          {data: 'opinions_id',title: "ID opinii"},
+                          {data: 'author',title: "Autor"},
+                          {data: 'content',title: "Treść"},
+                          {data: 'stars',title: "Gwiazdki"},
+                          {data: 'recomendation',title: "Rekomendacja"},
+                          {data: 'pros',title: "Lista zalet"},
+                          {data: 'cons',title: "Lista waf"},
+                          {data: 'useful_count',title: "Przydatna"},
+                          {data: 'unuseful_count',title: "nieprzydatna"},
+                          {data: 'purchased',title: "Potwierdzona zakupem"},
+                          {data: 'opinion_date',title: "Data wystawienia"},
+                          {data: 'purchase_date',title: "Data zakupu"},
+                        ]
+                      });
+                  });
+                </script>
             </div>
         </div>
     </div>
