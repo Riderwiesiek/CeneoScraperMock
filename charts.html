@@ -89,101 +89,57 @@
                         { stars: 5.0, count: 79, bgcolor: "#BDFCC9", bgborder: "#228B22"},
                     ];
 
-                  new Chart(
-                      document.getElementById('stars'),
-                      {
-                          type: 'bar',
-                          data: {
-                              labels: data.map(row => row.stars),
-                              datasets: [
-                                  {
-                                      label: 'Liczba opinii',
-                                      data: data.map(row => row.count),
-                                      backgroundColor: data.map(row =>row.bgcolor),
-                                      borderColor: data.map(row => row.bgborder),
-                                      borderWidth:1,
-                                   
-                                  }
-                              ]
-                          },
-                          options: {
-                              plugins: {
-                                  legend: {
-                                      display: false,
-                                  },
-                                  title: {
-                                      display: true,
-                                      text: 'Rozkład liczby gwiazdek w opiniach konsumentów'
-                                  }
-                              },
-                              scales: {
-                                  x: {
-                                      title: {
-                                          display: true,
-                                          text: 'Liczba gwiazdek'
-                                      }
-                                  },
-                                  y: {
-                                      title: {
-                                          display: true,
-                                          text: 'Liczba opinii'
-                                      }
-                                  }
-                              },
-                          },
-                      }
-                  );
-              </script>
-          </div> 
-          <div class="col-6">
-            <canvas id="recommendations"></canvas>
-            <script>
-                const recommendations = [
-                    { recommendation: "Nie polecam", count: 7, bgcolor: "#FFB6C1", bgborder: "#DC143C" },
-                    { recommendation: "Nie mam zdania", count: 8, bgcolor: "#B0E0E6", bgborder: "#4682B4" },
-                    { recommendation: "Polecam", count: 117, bgcolor: "#BDFCC9", bgborder: "#228B22" },
-                ];
-                new Chart(
-                    document.getElementById('recommendations'),
-                    {
-                        type: 'pie',
-                        data: {
-                            labels: recommendations.map(row => row.recommendation),
-                            datasets: [
-                                {
-                                    label: 'Liczba opinii',
-                                    data: recommendations.map(row => row.count),
-                                    backgroundColor: recommendations.map(row => row.bgcolor),
-                                    borderColor: recommendations.map(row => row.bgborder),
-                                    borderWidth:1
-                                }
-                            ]
-                        },
-                        options: {
-                            plugins: {
-                                legend: {
-                                    display: true,
+                    new Chart(
+                        document.getElementById('stars'),
+                        {
+                            type: 'bar',
+                            data: {
+                                labels: data.map(row => row.stars),
+                                datasets: [
+                                    {
+                                        label: 'Liczba opinii',
+                                        data: data.map(row => row.count)
+                                    }
+                                ]
+                            },
+                            options: {
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Rozkład liczby gwiazdek w opiniach konsumentów'
+                                    }
                                 },
-                                title: {
-                                    display: true,
-                                    text: 'Rozkład liczby rekomendacji w opiniach konsumentów'
+                                scales: {
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Liczba gwiazdek'
+                                        }
+                                    },
+                                    y: {
+                                        title: {
+                                            display: true,
+                                            text: 'Liczba opinii'
+                                        }
+                                    }
                                 },
                             },
-                        },
-                    }
-                );
-            </script>
+                        }
+                    );
+                </script>
+            </div>
+            <div class="col-6">
+                
+            </div>
         </div>
-          <div class="col-6">
-              
-          </div>
-      </div>
-  </div>
-  
-  <footer class="navbar navbar-expand-lg bg-body-tertiary fixed-bottom">
-      <div class="container">
-          <p>(c) Wiesiek Horniczak</p>
-      </div>
-  </footer>
+    </div>
+    <footer class="navbar navbar-expand-lg bg-body-tertiary fixed-bottom">
+        <div class="container">
+            <p>(c) Katarzyna Wójcik</p>
+        </div>
+    </footer>
 </body>
 </html>
